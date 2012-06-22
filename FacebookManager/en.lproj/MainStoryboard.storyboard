@@ -1,23 +1,184 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2541" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Fb0-fo-4TP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1875"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="gDt-sT-BOD">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="LOGIN FACEBOOK">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookButtonPressed:" destination="2" eventType="touchUpInside" id="wEk-aU-3Co"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gDt-sT-BOD" secondAttribute="bottom" constant="71" id="5D8-yx-Obr"/>
+                            <constraint firstAttribute="trailing" secondItem="gDt-sT-BOD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="TcQ-SH-2qi"/>
+                            <constraint firstItem="gDt-sT-BOD" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fCd-3n-WPz"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="qVN-jm-cis"/>
+                    <connections>
+                        <outlet property="facebookButton" destination="gDt-sT-BOD" id="wgS-Gf-k0G"/>
+                        <segue destination="ANJ-t9-aAg" kind="push" identifier="pushToHomeFromLogin" id="ZTW-AI-jKf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="574" y="39"/>
+        </scene>
+        <!--Home View Controller - Home-->
+        <scene sceneID="gqq-ER-n5n">
+            <objects>
+                <viewController id="ANJ-t9-aAg" customClass="HomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WWb-d5-YMd">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="kJe-Ee-54a">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Post To Wall">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Kwk-bO-Iog" kind="push" id="pRf-eI-WGR"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="wam-cX-WbI">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Get Friends List">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="lBQ-CU-UgV">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="czE-pV-C94">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Invite Friends">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="ifW-Il-AEZ">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ifW-Il-AEZ" firstAttribute="top" secondItem="czE-pV-C94" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="49D-aB-Ldr"/>
+                            <constraint firstAttribute="trailing" secondItem="czE-pV-C94" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5pD-Zs-zEY"/>
+                            <constraint firstItem="czE-pV-C94" firstAttribute="centerY" secondItem="WWb-d5-YMd" secondAttribute="centerY" type="default" id="6NI-dQ-JJV"/>
+                            <constraint firstItem="ifW-Il-AEZ" firstAttribute="leading" secondItem="WWb-d5-YMd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6op-9s-nTs"/>
+                            <constraint firstAttribute="trailing" secondItem="lBQ-CU-UgV" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Dac-xl-cyh"/>
+                            <constraint firstItem="lBQ-CU-UgV" firstAttribute="leading" secondItem="WWb-d5-YMd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="H2D-kg-lCk"/>
+                            <constraint firstItem="kJe-Ee-54a" firstAttribute="leading" secondItem="WWb-d5-YMd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="HJ1-8D-Lzk"/>
+                            <constraint firstAttribute="trailing" secondItem="wam-cX-WbI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="NkF-nh-7KG"/>
+                            <constraint firstAttribute="trailing" secondItem="ifW-Il-AEZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Nxm-LR-cqn"/>
+                            <constraint firstItem="wam-cX-WbI" firstAttribute="top" secondItem="kJe-Ee-54a" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OSx-6N-Cvi"/>
+                            <constraint firstAttribute="trailing" secondItem="kJe-Ee-54a" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ps8-mo-Yn4"/>
+                            <constraint firstItem="kJe-Ee-54a" firstAttribute="top" secondItem="WWb-d5-YMd" secondAttribute="top" constant="29" id="bGy-my-bOU"/>
+                            <constraint firstItem="wam-cX-WbI" firstAttribute="leading" secondItem="WWb-d5-YMd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dIV-u7-fKY"/>
+                            <constraint firstItem="czE-pV-C94" firstAttribute="leading" secondItem="WWb-d5-YMd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="iJI-Yq-klY"/>
+                            <constraint firstItem="lBQ-CU-UgV" firstAttribute="top" secondItem="wam-cX-WbI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nwF-Vz-npv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="Z8I-KN-sQf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TXS-D2-W6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050" y="39"/>
+        </scene>
+        <!--View Controller - Post To Wall-->
+        <scene sceneID="IOh-ni-eUq">
+            <objects>
+                <viewController id="Kwk-bO-Iog" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NZo-6w-6RZ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Post To Wall" id="b2M-P2-TOr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Zi-RW-nNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1530" y="39"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KV4-aK-A0Y">
+            <objects>
+                <navigationController id="Fb0-fo-4TP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wQ5-Bb-PKQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="ogp-wY-W91"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ViY-WP-fwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="39"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="facebookButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

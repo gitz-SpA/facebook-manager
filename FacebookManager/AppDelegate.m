@@ -5,8 +5,14 @@
 //  Created by Juan Eduardo Zumarán Salvatierra on 16-06-12.
 //  Copyright (c) 2012 Juan Eduardo Zumarán Salvatierra. All rights reserved.
 //
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
 
 #import "AppDelegate.h"
+#import "FacebookManager.h"
 
 @implementation AppDelegate
 
@@ -41,6 +47,25 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+/*
+ * Es necesario declarar este metodo dentro del AplicationDelegate de la aplicación. Este método se encarga
+ * de tomar la llamada de respuesta que genera Facebook.
+ */
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    DebugLog(@"HANDLE URL: %@", url);
+    
+    NSString *facebookUrlScheme = [NSString stringWithFormat:@"fb%@", kFBAppId];
+    
+    if ([url.scheme isEqualToString:facebookUrlScheme]) {
+        FacebookManager *manager = [FacebookManager sharedManager];
+        return [[manager facebook] handleOpenURL:url];
+    }
+    else {
+        return YES;
+    }
 }
 
 @end
